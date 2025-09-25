@@ -75,6 +75,15 @@ const productData = {
     image:
   "https://www.bigbasket.com/media/uploads/p/l/40166387_2-kelloggs-real-almond-honey-corn-flakes.jpg",
   },
+  7: {
+    name: "Pedigree Adult Dog Dry Food",
+    weight: "3kg",
+    price: 694,
+    oldPrice: 730,
+    discount: "5% OFF",
+    image:
+      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=450/da/cms-assets/cms/product/0a27b202-9f8e-4374-b0cd-b5d013d801f1.png",
+  },
 };
 
 

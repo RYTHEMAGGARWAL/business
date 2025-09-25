@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Search, ShoppingCart, User, MapPin, ChevronDown } from 'lucide-react';
 import './Navbar.css';
 import { Link, Routes, Route } from 'react-router-dom';
+
 import { useCart } from './CartContext'; // Import useCart hook
 import JagatStore from "./JagatStore";
 import ShowProducts from './ShowProducts';
+import logo3 from '../assets/logo3.png';
 
 const Navbar = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -19,7 +21,7 @@ const Navbar = () => {
         <div className="logo-section">
           <div className="logo">
             <Link to="/">
-              <span className="logo-text">JagatStore</span>
+              <img src={logo3} alt="Jagat Store Logo" height="50vh" className="logo-img" />
             </Link>
           </div>
         </div>
@@ -36,7 +38,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        /* Search Section */
+       
         <div className="search-section">
           <div className="search-container">
             <Search className="search-icon" size={20} />
@@ -50,14 +52,7 @@ const Navbar = () => {
                 }}
                 className="search-input"
               />
-              <button
-                className="search-btn"
-                onClick={() => {
-                window.location.href = `/ShowProducts?search=${encodeURIComponent(searchValue)}`;
-                }}
-              >
-                Search
-              </button>
+             
               </div>
             </div>
             <div className="auth-cart-section">
