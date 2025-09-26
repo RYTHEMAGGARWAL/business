@@ -144,7 +144,8 @@ const FirstContainer = () => {
     {
       id: 2,
       src: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-11.png",
-      alt: "Masala, Oil and More"
+      alt: "Masala, Oil and More",
+      link:"/MasalaOil"
     },
     {
       id: 3,

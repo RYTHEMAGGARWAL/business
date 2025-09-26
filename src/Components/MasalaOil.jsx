@@ -3,184 +3,14 @@ import { useCart } from './CartContext';
 
 const products = [
   {
-    id: 43,
-    name: "Milk",
-    weight: "1kg",
-    price: 40,
-    oldPrice: 730,
-    discount: "5% OFF",
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/628c97e0-5ed4-425d-a667-1d3bfa6f0bde.png",
-  },
-  {
-    id: 44,
-    name: "baby pet",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/5734b087-3ad9-485f-bbe2-52079cd9e35d.png",
-  },
-  {
-    id: 45,
-    name: "Adult1",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/ae29e828-f5d9-4f8b-89b6-8c6d6919df7b.png",
-  },
-  {
-    id: 46,
-    name: "Adult2",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/60065a08-2486-4f67-b2ae-e03670b2c8f3.png",
-  },
-  {
-    id: 47,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/c1d65f38-031a-4028-8bf6-a5fc2f0e288d.png",
-  },
-  {
-    id: 48,
-    name: "Adult",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/c1d65f38-031a-4028-8bf6-a5fc2f0e288d.png",
-  },
-  {
-    id: 49,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/c02659e5-2d26-41a3-b338-b3a2a6981a92.png",
-  },
-  {
-    id: 50,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=180/app/images/category/cms_images/icon/952_1657599773117.png",
-  },
-  {
-    id: 51,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/0b267148-c2c6-4eae-9ecd-1e9a83569e3a.png",
-  },
-  {
-    id: 52,
-    name: "Adult6",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/9f363c60-8b58-4e1a-8c20-9647247b7227.png",
-  },
-  {
-    id: 53,
-    name: "Adult8",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/04cb3d03-fa41-4229-82d1-67beb4d4cd7d.png",
-  },
-  {
-    id: 54,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/ff8853fd-1be8-48cf-893a-3f1616af322c.png",
-  },
-   {
-    id: 55,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/f4418ade-78c5-4405-9973-02c6c6db3289.png",
-  },
-   {
-    id: 56,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/fb337791-9328-4c38-a2ee-bc3bb20d204a.png",
-  },
-   {
-    id: 57,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/b232b090-361c-49ee-99a9-617eeac57aef.png",
-  },
- {
-    id: 58,
-    name: "Adult3",
+    id: 61,
+    name: "masala",
     weight: "250 g",
     price: 125,
     oldPrice: null,
     discount: null,
     image:
       "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/951eaf30-2c8f-4032-bca6-51885222aa99.png",
-  },
- {
-    id: 59,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    image:
-      "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/951eaf30-2c8f-4032-bca6-51885222aa99.png",
-  },
- {
-    id: 60,
-    name: "Adult3",
-    weight: "250 g",
-    price: 125,
-    oldPrice: null,
-    discount: null,
-    // image:
-    //   "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=270/da/cms-assets/cms/product/66d4a9c5-cf2a-49e5-a99f-cbf4b5e83076.png",
   },
   
  
@@ -363,7 +193,7 @@ const ProductCard = ({ product }) => {
   );
 };
 
-const DairyBreadEggs = () => {
+const MasalaOil = () => {
   return (
     <div>
       <div style={{
@@ -383,4 +213,4 @@ const DairyBreadEggs = () => {
   );
 };
 
-export default DairyBreadEggs;
+export default MasalaOil;
