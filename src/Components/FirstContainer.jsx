@@ -102,11 +102,12 @@ import PaanCorner from './PaanCorner';
 import PetCare from './PetCare';
 import BabyCare from './BabyCare';
 import Pharmacy from './Pharmacy';
+import productslogo from '../assets/productslogo.png';
 const FirstContainer = () => {
   // Hero section images
   const heroImages = {
     main: {
-      src: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg",
+      src: productslogo,
       alt: "Paan Corner",
       link: "/PaanCorner"
     },

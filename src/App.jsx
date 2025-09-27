@@ -10,6 +10,8 @@ import Pharmacy from './Components/Pharmacy'
 import BabyCare from './Components/BabyCare'
 import PetCare from './Components/PetCare'
 import CartProvider from './Components/CartContext'
+import Checkout from './Components/Checkout'
+
 import DairyBreadEggs from './Components/DairyBreadEggs'
 import MasalaOil from './Components/MasalaOil'
 
@@ -31,6 +33,7 @@ const App = () => {
     <Route path='/BabyCare' element={<BabyCare/>}/>
     <Route path='/DairyBreadEggs' element={<DairyBreadEggs/>}/>
     <Route path='/MasalaOil' element={<MasalaOil/>}/>
+    <Route path='/Checkout' element={<Checkout/>}/>
     </Routes>
     </CartProvider>
     </div>

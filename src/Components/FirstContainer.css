@@ -1,50 +1,209 @@
+/* FirstContainer.css */
 
-.wide{
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-   
-
-}
-.smalls{
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    justify-content: flex-start;
-    padding: 15px 15px;
-    /* cursor: pointer; */
-}
-.smalls img{
-    cursor: pointer;
-    height:250px;
-    width: 430px;
+.wide {
+  width: 100%;
+ max-width: 1280px; 
+  margin: 16px auto; /* Reduced margin for tighter layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-/* categories styling*/
-
-.categories{
-    width: 85%;
-    height: auto;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-   
-}
-.products{
-    width: 128px;
-    height: 188.235px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-     cursor:pointer;
+.wide img {
+  width: 100%;
+ 
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure image fills container */
+  border-radius: 8px; /* Rounded corners like Blinkit */
+  max-height: 300px; /* Constrain height for consistency */
 }
 
+.smalls {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  align-items: center;
+  justify-content: center; /* Center items like Blinkit */
+  gap: 12px; /* Tighter gap for modern look */
+  padding: 12px;
+}
+
+.smalls img {
+  cursor: pointer;
+  width: 100%;
+  max-width: 360px; /* Constrain image width */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Rounded corners */
+  max-height: 200px; /* Constrain height */
+}
+
+/* Categories styling */
+.categories {
+  width: 100%;
+  max-width: 1280px;
+  margin: 16px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid like Blinkit */
+  gap: 12px; /* Consistent spacing */
+  padding: 12px;
+}
+
+.products {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.products img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Rounded corners for category tiles */
+  max-height: 160px; /* Constrain height */
+  transition: transform 0.2s ease; /* Smooth hover effect like Blinkit */
+}
+
+.products img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Responsive Design */
+
+/* Large screens (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .wide {
+    margin: 24px auto;
+  }
+
+  .wide img {
+    max-height: 350px; /* Larger banner for desktop */
+  }
+
+  .smalls {
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .smalls img {
+    max-width: 400px;
+    max-height: 220px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(6, 1fr); /* 6 columns like Blinkit */
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .products img {
+    max-height: 180px;
+  }
+}
+
+/* Tablets (768px to 1023px) */
+@media (max-width: 1023px) {
+  .wide {
+    margin: 16px auto;
+  }
+
+  .wide img {
+    max-height: 280px;
+  }
+
+  .smalls {
+    gap: 12px;
+    padding: 12px;
+    justify-content: space-between; /* Spread images evenly */
+  }
+
+  .smalls img {
+    max-width: 300px;
+    max-height: 180px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 3–4 columns */
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .products img {
+    max-height: 140px;
+  }
+}
+
+/* Mobile devices (480px to 767px) */
+@media (max-width: 767px) {
+  .wide {
+    margin: 12px auto;
+    padding: 0 8px;
+  }
+
+  .wide img {
+    max-height: 200px;
+  }
+
+  .smalls {
+    flex-direction: column; /* Stack images vertically like Blinkit */
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .smalls img {
+    max-width: 100%; /* Full width for mobile */
+    max-height: 150px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); /* 2–3 columns */
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .products img {
+    max-height: 120px;
+  }
+}
+
+/* Small mobile devices (below 480px) */
+@media (max-width: 479px) {
+  .wide {
+    margin: 8px auto;
+    padding: 0 4px;
+  }
+
+  .wide img {
+    max-height: 160px;
+    border-radius: 6px;
+  }
+
+  .smalls {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .smalls img {
+    max-height: 120px;
+    border-radius: 6px;
+  }
+
+  .categories {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* 2 columns or single column */
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .products img {
+    max-height: 100px;
+    border-radius: 6px;
+  }
+}
 

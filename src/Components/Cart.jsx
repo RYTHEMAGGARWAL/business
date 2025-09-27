@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Clock, Truck, Package, Info } from 'lucide-react';
 import { useCart } from './CartContext';
 import { Link, Routes, Route } from 'react-router-dom';
@@ -14,6 +14,44 @@ const ShoppingCart = () => {
   const handlingCharge = 2;
   const grandTotal = itemsTotal + deliveryCharge + handlingCharge;
   const totalItems = getTotalItems();
+
+  const [deliveryText, setDeliveryText] = useState('Delivery in 40 minutes');
+  const [deliverySubText, setDeliverySubText] = useState('Shipment of {totalItems} items');
+
+  useEffect(() => {
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentMinute = now.getMinutes();
+    const currentTimeInMinutes = currentHour * 60 + currentMinute;
+
+    const openTimeInMinutes = 10 * 60; // 10:00 AM
+    const closeTimeInMinutes = 20 * 60; // 8:00 PM
+
+    let newDeliveryText = 'Delivery in 40 minutes';
+    let newDeliverySubText = `Shipment of ${totalItems} items`;
+
+    if (currentTimeInMinutes < openTimeInMinutes) {
+      newDeliveryText = 'Opens at 10:00 AM';
+      newDeliverySubText = 'Delivery tomorrow';
+    } else if (currentTimeInMinutes >= closeTimeInMinutes) {
+      newDeliveryText = 'Closed now';
+      newDeliverySubText = 'Delivery tomorrow';
+    } else {
+      // Within operating hours
+      const closingTimeInMinutes = closeTimeInMinutes;
+      const timeToCloseInMinutes = closingTimeInMinutes - currentTimeInMinutes;
+      if (timeToCloseInMinutes >= 40) {
+        newDeliveryText = 'Delivery in 40 minutes';
+        newDeliverySubText = `Shipment of ${totalItems} items`;
+      } else {
+        newDeliveryText = 'Delivery before closing';
+        newDeliverySubText = `Shipment of ${totalItems} items`;
+      }
+    }
+
+    setDeliveryText(newDeliveryText);
+    setDeliverySubText(newDeliverySubText);
+  }, [totalItems]);
 
   if (!isOpen) return null;
 
@@ -95,12 +133,12 @@ const ShoppingCart = () => {
                 color: '#111827',
                 margin: 0,
                 fontSize: '16px'
-              }}>Delivery in 40 minutes</p>
+              }}>{deliveryText}</p>
               <p style={{
                 fontSize: '14px',
                 color: '#6b7280',
                 margin: 0
-              }}>Shipment of {totalItems} items</p>
+              }}>{deliverySubText}</p>
             </div>
           </div>
         </div>
@@ -375,6 +413,7 @@ const ShoppingCart = () => {
 
             {/* Checkout Button */}
             {/* <Link to="/Login"> */}
+              <Link to='/Checkout' style={{textDecoration:'none', color: "white", onMouseOver:"none"}}>
             <div style={{
               padding: '16px',
               backgroundColor: 'white',
@@ -405,17 +444,21 @@ const ShoppingCart = () => {
                     opacity: 0.9
                   }}>TOTAL</div>
                 </div>
+                 
                 <div style={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: '8px'
                 }}>
+             
                   <span>Checkout</span>
                   <span>→</span>
+                 
                 </div>
+                
               </button>
             </div>
-            {/* </Link> */}
+            {/* </Link> */} </Link> 
           </>
         )}
       </div>
