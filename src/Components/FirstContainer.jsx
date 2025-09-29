@@ -186,7 +186,8 @@ const FirstContainer = () => {
     {
       id: 10,
       src: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-20.png",
-      alt: "Pet Care"
+      alt: "Pet Care",
+      link: "/PetCare"
     },
     {
       id: 11,
@@ -196,7 +197,8 @@ const FirstContainer = () => {
     {
       id: 12,
       src: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-10.png",
-      alt: "Atta, Rice and Dal"
+      alt: "Atta, Rice and Dal",
+      link:"AttaRiceDal"
     },
     {
       id: 13,
@@ -211,7 +213,8 @@ const FirstContainer = () => {
     {
       id: 15,
       src: "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-15.png",
-      alt: "Baby Care"
+      alt: "Baby Care",
+      link: "/BabyCare"
     },
     {
       id: 16,

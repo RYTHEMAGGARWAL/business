@@ -14,6 +14,7 @@ import Checkout from './Components/Checkout'
 
 import DairyBreadEggs from './Components/DairyBreadEggs'
 import MasalaOil from './Components/MasalaOil'
+import AttaRiceDal from './Components/AttaRiceDal'
 
 
 const App = () => {
@@ -34,6 +35,8 @@ const App = () => {
     <Route path='/DairyBreadEggs' element={<DairyBreadEggs/>}/>
     <Route path='/MasalaOil' element={<MasalaOil/>}/>
     <Route path='/Checkout' element={<Checkout/>}/>
+    <Route path='/AttaRiceDal' element={<AttaRiceDal/>}/>
+
     </Routes>
     </CartProvider>
     </div>

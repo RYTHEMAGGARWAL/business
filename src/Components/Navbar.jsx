@@ -22,14 +22,21 @@ const Navbar = () => {
     const query = searchValue.trim().toLowerCase();
     if (query) {
       const petCareKeywords = ['pet', 'dog', 'cat', 'petcare', 'pedigree', 'whiskas', 'food', 'adult', 'puppy', 'pet food'];
+
       const babyCareKeywords = ['baby', 'diaper', 'whisper', 'babycare', 'baby care', 'stayfree', 'pampers', 'mamy', 'mamy poko pants', 'Whisper', 'baby diaper'];
+
       const dairyBreadEggsKeywords = ['milk', 'bread','dahi','curd', 'paneer','cheese','butter','bun','pav','burger','Mozrilla','panner', 'eggs', 'dairy', 'butter', 'cheese','amul','cream', 'amul milk', 'farm eggs', 'whole wheat bread'];
+
+      const attaRiceDalKeywords = ['atta', 'rice', 'dal', 'flour', 'chawal', 'aashirvaad', 'aashirwaad', 'fortune', 'arhar', 'chana', 'moong', 'urad', 'masoor', 'rajma', 'chole', 'matar', 'pulav','kala chana', 'basmati', 'sabut', 'tukda', 'pona', 'mini', 'golden sella', 'india gate', 'daawat', 'sugar', 'chini', 'brown sugar'];
+      
 
       let route = '/PetCare'; // Default to PetCare
       if (babyCareKeywords.some(keyword => query.includes(keyword))) {
         route = '/BabyCare';
       } else if (dairyBreadEggsKeywords.some(keyword => query.includes(keyword))) {
         route = '/DairyBreadEggs';
+      } else if (attaRiceDalKeywords.some(keyword => query.includes(keyword))) {
+        route = '/AttaRiceDal';
       }
 
       const navigationUrl = `${route}?search=${encodeURIComponent(query)}`;
